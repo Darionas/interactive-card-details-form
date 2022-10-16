@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url(reset.css);
+@import url(FM_part.css);
+
+
+:root {
+    /* colors */
+    --clr-primary-bgr: hsl(249, 99%, 64%);
+    --clr-secondary-bgr: hsl(278, 94%, 30%);
+    --clr-input-errors:  hsl(0, 100%, 66%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-violet: hsl(270, 3%, 87%);
+    --clr-dark-violet: hsl(279, 6%, 55%);
+    --clr-vdark-violet: hsl(278, 68%, 11%);
+    --blue: 249, 99%, 64%;
+    --violet: 278, 94%, 30%;
+    --violet-dark: 278, 68%, 11%;
+
+    /* fonts */
+    --ff-primary: 'Space Grotesk', sans-serif;
+    --fw-500: 500;
+    --fs-18m: 4.8vw;
+    --fs-18d: 1.125rem; 
+
+}
+
+html {height: 100%;}
+
+body {
+    font-family: var(--ff-primary);
+    min-height: 100%;
+    background-color: var(--clr-vdark-violet);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/*---------------------Mobile layout-------------------------*/
+
+.grid-container {
+    border: 2px solid green; 
+}
+
+
+
+
+
+/*---------------------Desktop layout-------------------------*/
+
+
+
+
+
+
+/*------------------grid area names---------------------------*/

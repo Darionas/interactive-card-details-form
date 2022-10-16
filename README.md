@@ -5,9 +5,9 @@
 
 ## Plan workflow
 
-- [ ] Creation of repo (is done).
-- [ ] Create HTML layout (is done).
-- [ ] Create CSS layouts according style guides (1st task).
+- [x] Creation of repo (is done).
+- [x] Create HTML layout (is done).
+- [x] Create CSS layouts according style guides (1st task).
 - [ ] Create grid layout for mobile first, and desktop (2nd task).
 - [ ] Implement code solutions on HTML and CSS (3rd task).
 - [ ] Implement JavaScript (4rd task).

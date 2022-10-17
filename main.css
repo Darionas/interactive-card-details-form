@@ -42,18 +42,144 @@ p {
 /*---------------------Mobile layout-------------------------*/
 
 .grid-container {
-    border: 2px solid green; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'imgo'
+        'card_gray'
+        'card_blue'
+        'cont'
+        'attribution';
+    gap: 0;
+    min-width: 12.5rem;
+    height: auto;
+    /*margin: 0.9375rem;*/ 
+}
+
+.imgo {
+    background-color: var(--clr-vdark-violet);
+    background-image: url('images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 757px;
+    min-height: 250px;
+}
+
+.card_gray, .card_blue {
+    display: none;
+}
+
+.cont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'form';
+    background-color: var(--clr-white);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'l-1'
+        'i-1'
+        'l-2'
+        'i-2'
+        'fd';
 }
 
 
+.fd {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        'l-3 l-4 l-5'
+        'i-3 i-4 i-5';
+    grid-column: span 1;
+}
 
-
+.l-3, .l-4, .l-5, .i-3, .i-4, .i-5 {
+    display: block;
+}
 
 /*---------------------Desktop layout-------------------------*/
+@media screen and (min-width: 48rem) {
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'imgo content'
+        'attribution attribution';
+}
 
-
-
-
-
+}
 /*------------------grid area names---------------------------*/
+
+.imgo {
+    grid-area: imgo;
+}
+
+.card_gray {
+    grid-area: card_gray;
+}
+
+.card_blue {
+    grid-area: card_blue;
+}
+
+.cont {
+    grid-area: cont;
+}
+
+.form {
+    grid-area: form;
+}
+
+.attribution {
+    grid-area: attribution;
+}
+
+.l-1 {
+    grid-area: l-1;
+}
+
+.i-1 {
+    grid-area: i-1;
+}
+
+.l-2 {
+    grid-area: l-2;
+}
+
+.i-2 {
+    grid-area: i-2;
+}
+
+.fd {
+    grid-area: fd;
+}
+
+.l-3 {
+    grid-area: l-3;
+}
+
+.i-3 {
+    grid-area: i-3;
+}
+
+.l-4 {
+    grid-area: l-4;
+}
+
+.i-4 {
+    grid-area: i-4;
+}
+
+.l-5 {
+    grid-area: l-5;
+}
+
+.i-5 {
+    grid-area: i-5;
+}

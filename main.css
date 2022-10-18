@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
 @import url(reset.css);
 @import url(FM_part.css);
 
@@ -19,7 +19,9 @@
     /* fonts */
     --ff-primary: 'Space Grotesk', sans-serif;
     --fw-500: 500;
+    --fw-700: 700;
     --fs-18m: 4.8vw;
+    --fs-22m: 5.867vw;
     --fs-18d: 1.125rem; 
 
 }
@@ -40,29 +42,35 @@ p {
 }
 
 /*---------------------Mobile layout-------------------------*/
+/*
+* {border: 1px solid green;}*/
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
         'imgo'
-        'card_gray'
-        'card_blue'
         'cont'
         'attribution';
     gap: 0;
     min-width: 12.5rem;
     height: auto;
-    /*margin: 0.9375rem;*/ 
+    /*margin: 0.9375rem;*/
+    position: relative;
 }
 
 .imgo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'card_gray'
+        'card_blue';
     background-color: var(--clr-vdark-violet);
     background-image: url('images/bg-main-mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
-    min-width: 757px;
-    min-height: 250px;
+    min-width: 650px;
+    min-height: 150px;
 }
 
 .card_gray, .card_blue {
@@ -75,6 +83,9 @@ p {
     grid-template-areas:
         'form';
     background-color: var(--clr-white);
+    min-height: 440px;
+    min-width: 200px;
+    position: relative;
 }
 
 .form {
@@ -85,31 +96,80 @@ p {
         'i-1'
         'l-2'
         'i-2'
-        'fd';
+        'fd'
+        'su';
+    padding: 15px;
+    position: absolute;
+    top: 10px;
 }
-
 
 .fd {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-        'l-3 l-4 l-5'
+        'l-3 l-3 l-5'
         'i-3 i-4 i-5';
-    grid-column: span 1;
+    /*grid-column: span 1;*/
+    gap: 0px;
+    margin-top: 20px;
+    border: none;
 }
 
-.l-3, .l-4, .l-5, .i-3, .i-4, .i-5 {
+.l-3, .l-5, .i-3, .i-4, .i-5 {
     display: block;
 }
+/*
+[class*='l-'] {
+   font-size: var( --fs-18m);
+   font-weight: var(--fw-700);
+   color: var(--clr-vdark-violet);
+   padding: 10px 0 10px 0;
+}
 
+[class*='i-'] {
+   font-family: var(--ff-primary);
+   font-size: var(--fs-18m);
+   font-weight: var(--fw-500);
+   border-radius: 12px;
+   border-color: var(--clr-light-violet);
+   color: var(--clr-light-violet);
+}
+
+.i-1, .i-2 {
+    max-width: 260px;
+    padding: 10px;
+}
+
+.i-3, .i-4 {
+    width: 40%;
+    padding: 10px;
+}
+
+.fi-3 {
+
+    padding: 10px;
+}
+
+.su {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-18m);
+    font-weight: var(--fw-500);
+    background-color: var(--clr-vdark-violet);
+    color: var(--clr-light-violet);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+*/
 /*---------------------Desktop layout-------------------------*/
 @media screen and (min-width: 48rem) {
+
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        'imgo content'
+        'imgo cont'
         'attribution attribution';
 }
 
@@ -134,10 +194,6 @@ p {
 
 .form {
     grid-area: form;
-}
-
-.attribution {
-    grid-area: attribution;
 }
 
 .l-1 {
@@ -182,4 +238,12 @@ p {
 
 .i-5 {
     grid-area: i-5;
+}
+
+.su {
+    grid-area: su;
+}
+
+.attribution {
+    grid-area: attribution;
 }

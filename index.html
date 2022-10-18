@@ -13,9 +13,10 @@
 </head>
 <body>
     <div class="grid-container">
-        <div class="imgo"></div>
-        <img class="card_gray" src="images/bg-card-back.png" alt="Payment card" />
-        <img class="card_blue" src="images/bg-card-front.png" alt="Payment card" />  
+        <div class="imgo">
+            <img class="card_gray" src="images/bg-card-back.png" alt="Payment card" />
+            <img class="card_blue" src="images/bg-card-front.png" alt="Payment card" />
+        </div>
         <main class="cont">
             <form class="form">
                 <label class="l-1" for="cardholder">CARDHOLDER NAME</label><br/>
@@ -23,13 +24,14 @@
                 <label class="l-2" for="cardNr">CARD NUMBER</label><br/>
                 <input type="number" id="cardNr" class="i-2" name="cardNr" placeholder="e.g. 1234 5678 9123 0000" /><br/>
                 <fieldset class="fd">
-                    <label class="l-3" for="mm">EXP. DATE (MM/YY)</label>
-                    <input type="number" id="mm" class="i-3" name="mm" placeholder="MM" />
-                    <label class="l-4" for="yy"></label> <!--hide it-->
-                    <input type="number" id="yy" class="i-4" name="yy" placeholder="YY" />
-                    <label class="l-5" for="cvc">CVC</label>
-                    <input type="number" id="cvc" class="i-5" name="cvc" placeholder="e.g. 123" />
+                    <label class="l-3 fl-1" for="mm">EXP. DATE (MM/YY)</label>
+                    <input type="number" id="mm" class="i-3 fi-1" name="mm" placeholder="MM" />
+                    <!--<label class="l-4" for="yy"></label>--><!--hide it-->
+                    <input type="number" id="yy" class="i-4 fi-2" name="yy" placeholder="YY" />
+                    <label class="l-5 fl-3" for="cvc">CVC</label>
+                    <input type="number" id="cvc" class="i-5 fi-3" name="cvc" placeholder="e.g. 123" />
                 </fieldset>
+                <input type="submit" id="subm" class="su" value="Confirm" />
             </form>
         </main>
         <div class="attribution">

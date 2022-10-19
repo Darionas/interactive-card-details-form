@@ -34,7 +34,7 @@ body {
     background-color: var(--clr-vdark-violet);    
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
 }
 
 p {
@@ -53,10 +53,11 @@ p {
         'cont'
         'attribution';
     gap: 0;
-    min-width: 12.5rem;
-    height: auto;
+    min-width: 47.9375rem;
+    max-height: auto;
     /*margin: 0.9375rem;*/
     position: relative;
+    top: 0;
 }
 
 .imgo {
@@ -69,8 +70,8 @@ p {
     background-image: url('images/bg-main-mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
-    min-width: 650px;
-    min-height: 150px;
+    width: 204.533vw; /*650*/
+    height: 53.333vw; /*150*/
 }
 
 .card_gray, .card_blue {
@@ -83,8 +84,8 @@ p {
     grid-template-areas:
         'form';
     background-color: var(--clr-white);
-    min-height: 440px;
-    min-width: 200px;
+    height: 106.667vw;
+    width: 204.533vw;
     position: relative;
 }
 
@@ -98,9 +99,12 @@ p {
         'i-2'
         'fd'
         'su';
-    padding: 15px;
+    /*padding: 15px;*/
+    margin: 0 1.875rem 0 1.875rem;
     position: absolute;
-    top: 10px;
+    bottom: 0rem;
+    height: 106.667vw;
+    width: 204.533vw;
 }
 
 .fd {
@@ -110,45 +114,58 @@ p {
         'l-3 l-3 l-5'
         'i-3 i-4 i-5';
     /*grid-column: span 1;*/
-    gap: 0px;
-    margin-top: 20px;
+    gap: 0;
+    /*margin-top: 20px;*/
     border: none;
 }
 
-.l-3, .l-5, .i-3, .i-4, .i-5 {
-    display: block;
+.i-1, .i-2, .fd {
+    margin-bottom: 1.25rem;
 }
-/*
+
 [class*='l-'] {
    font-size: var( --fs-18m);
    font-weight: var(--fw-700);
    color: var(--clr-vdark-violet);
-   padding: 10px 0 10px 0;
+   padding: 0.625rem 0 0.625rem 0;
+   width: 70%;
 }
 
 [class*='i-'] {
    font-family: var(--ff-primary);
    font-size: var(--fs-18m);
    font-weight: var(--fw-500);
-   border-radius: 12px;
+   border-radius: 0.75rem;
    border-color: var(--clr-light-violet);
    color: var(--clr-light-violet);
+   width: 70%;
+}
+
+.l-3, .l-5, .i-3, .i-4, .i-5 {
+    display: block;
+}
+
+.l-3 {
+    max-width: 21rem;
+}
+
+.l-5, .i-5 {
+    max-width: 22rem;
 }
 
 .i-1, .i-2 {
-    max-width: 260px;
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 .i-3, .i-4 {
-    width: 40%;
-    padding: 10px;
+    max-width: 9rem;
+    padding: 0.625rem;
 }
 
-.fi-3 {
-
-    padding: 10px;
+.i-3, .i-4, .i-5 {
+    padding-left: 1.25rem;
 }
+
 
 .su {
     font-family: var(--ff-primary);
@@ -156,11 +173,12 @@ p {
     font-weight: var(--fw-500);
     background-color: var(--clr-vdark-violet);
     color: var(--clr-light-violet);
-    padding: 25px;
-    border-radius: 15px;
-    margin-top: 20px;
+    padding: 1.5625rem;
+    border-radius: 0.9375rem;
+    margin-top: 1.25rem;
+    width: 70%;
 }
-*/
+
 /*---------------------Desktop layout-------------------------*/
 @media screen and (min-width: 48rem) {
 

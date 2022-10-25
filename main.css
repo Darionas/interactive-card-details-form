@@ -21,7 +21,7 @@
     --ff-primary: 'Space Grotesk', sans-serif;
     --fw-500: 500;
     --fw-700: 700;
-    --fs-10m: 2.667vw;
+    /*--fs-10m: 2.667vw;
     --fs-12m: 3.2vw;
     --fs-16m: 4.267vw;
     --fs-18m: 4.8vw;
@@ -31,21 +31,34 @@
     --fs-16d: 1.111vw;
     --fs-18d: 1.25vw;
     --fs-22d: 1.528vw; 
-    --fs-24d: 1.667vw;
+    --fs-24d: 1.667vw;*/
 
 }
 
-html {height: 100%;}
+/* typography */
+html {
+    /* 62.5% of 16px browser font size is 10px */
+    font-size: 62.5%;
+    height: 100%;
+}s
+
+body {
+    /* It returns default value of browser (16px) */
+    font-size: 1.6em;
+    min-height: 100%;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* typography end */
 
 body {
     font-family: var(--ff-primary);
     background-color: var(--clr-vdark-violet);    
     display: flex;
     justify-content: center;
-}
-
-p {
-    line-height: 1.5;
 }
 
 /*---------------------Mobile layout-------------------------*/
@@ -60,11 +73,13 @@ p {
         'cont'
         'attribution';
     gap: 0;
-    max-width: 47.9375rem;
-    position: relative;
-    top: 0;
+    min-width: 37.5rem;
+    /*position: relative;
+    top: 0;*/
+    /*border: 2px solid yellow;*/
 }
 
+/* style 1st component - mobile */
 .imgo {
     display: grid;
     grid-template-columns: 1fr;
@@ -76,22 +91,21 @@ p {
         'card_num'
         'owner'
         'dat';
-    background-color: var(--clr-vdark-violet);
     background-image: url('images/bg-main-mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 60vw;
+    height: 25rem;
     position: relative;
-    /*border: 2px solid yellow;*/
+    
 }
-
+/*
 .card_gray {
     position: absolute;
     bottom: -35.5vw;
     left: 19vw;
     max-width: 70%;
     z-index: 1;
-    /*border: 3px solid blue;*/
+
 }
 
 .cvc_num {
@@ -102,16 +116,16 @@ p {
     font-size: var(--fs-12m);
     font-weight: var(--fw-500);
     z-index: 2;
-    /*border: 1px solid yellow;*/
-}
 
+}
+*/
 .card_blue {
     position: absolute;
-    bottom: -42vw;
-    margin: 0 0 2vw 3vw;
-    max-width: 70%;
+    bottom: -18rem;
+    left: 4rem;
+    width: 60%;
     z-index: 2;
-    /*border: 3px solid red;*/
+
 }
 
 .svg_cont {
@@ -120,19 +134,19 @@ p {
     grid-template-areas:
         'card_logo';
     position: absolute;
-    bottom: -3vw;
-    left: 8vw;
-    width: 11vw;
-    height: auto;
+    bottom: -1.1rem;
+    left: 3rem;
+    width: 6rem;
     z-index: 2;
-    /*border: 1px solid green; */
+    display: none;
+
 }
 
 .card_logo {
-    max-width: 100%;
-    max-height: auto;
+    width: 100%;
+    height: auto;
 }
-
+/*
 .card_num {
     position: absolute;
     left: 10vw;
@@ -142,7 +156,7 @@ p {
     color: var(--clr-white);
     letter-spacing: 0.2vw;
     z-index: 2;
-    /*border: 2px solid green;*/
+
 }
 
 .owner {
@@ -153,7 +167,7 @@ p {
     font-weight: var(--fw-500);
     color: var(--clr-white);
     z-index: 2;
-   /*border: 2px solid green;*/
+
 }
 
 .dat {
@@ -170,7 +184,7 @@ p {
     display: inline-block;
     max-width: 11vw;
     z-index: 2;
-    /*border: 2px solid green;*/
+
 }
 
 .dat1, .dat2 {
@@ -179,7 +193,8 @@ p {
     color: var( --clr-white);
     max-width: 100%;
 }
-
+*/
+/* style 2nd component - mobile */
 .cont {
     display: grid;
     grid-template-columns: 1fr;
@@ -188,9 +203,12 @@ p {
         'thanks';
     background-color: var(--clr-white);
     position: relative;
+    height: 40rem;
+    /*width: 100%;*/
     z-index: 0;
-    /*border: 2px solid green;*/
+
 }
+
 
 .form {
     display: grid;
@@ -203,101 +221,93 @@ p {
         'valid_1'
         'fd'
         'su_1';
-    margin: 0 1.875rem 0 1.875rem;
+    margin: 0 1.8rem 0 1.8rem;
     position: relative;
-    max-width: 47.9375rem;
+    justify-self: center;
+    margin-inline: auto;
+    width: 70%;
     visibility: visible;
-    /*border: 1px solid green;*/
+
 }
 
 .form > * {
     position: relative;
-    bottom: -2.5rem;
+    top: 5rem;
 }
 
-.form::placeholder {
-    font-family: var(--ff-primary);
-    font-size: var(--fs-18m);
+input {
+    font-size: 1.8rem;
     font-weight: var(--fw-500);
     color: var(--clr-light-violet);
 }
 
 [class*='l-'] {
-    font-size: var( --fs-18m);
+    font-size: 1.2rem;
     font-weight: var(--fw-700);
     color: var(--clr-vdark-violet);
-    padding: 2.08vw 0 0.83vw 0;
+    padding: 0.8rem 0 0.3rem 0;
+    width: 100%;
  }
  
  [class*='i-'] {
     border-radius: 0.5rem;
     border-color: var(--clr-light-violet);
-    padding: 2vw;
+    padding: 0.8rem;
+    width: 100%;
  }
 
 .valid_1 {
-    font-size: var( --fs-10m);
+    font-size: 1.2rem;
     font-weight: var(--fw-500);
     color: var(--clr-input-errors);
-    margin-top: 1vw;
+    margin-top: 0rem;
     visibility: hidden;
 }
 
 .fd {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(9, 1fr);
     grid-template-areas:
-        'l-3 l-3 l-5'
-        'i-3 i-4 i-5'
-        'valid_2 . valid_3';
+        'l-3 l-3 l-3 l-3 l-5 l-5 l-5 l-5 l-5'
+        'i-3 i-3 i-4 i-4 i-5 i-5 i-5 i-5 i-5'
+        'valid_2 valid_2 valid_2 valid_2 valid_3 valid_3 valid_3 valid_3 valid_3';
+    column-gap: 0.6rem;
+    width: 100%;
     border: none;
-    /*border: 1px solid green;*/
-}
-
-.fd {
-    margin-bottom: 6.4vw;
+    /*border: 2px solid red;*/
 }
 
 .l-3, .l-5, .i-3, .i-4, .i-5 {
     display: block;
 }
 
-.l-2, .l-3, .l-5 {
-    margin-top: 4.5vw;
+.l-2 {
+    margin-top: 0.2rem;
 }
 
-.l-3 {
-    max-width: 95vw;
-}
-
-.i-3, .i-4 {
-    max-width: 19vw;
-}
-
-.l-5, .i-5 {
-    max-width: 34vw;
+.l-3, .l-5, .i-3, .i-4, .i-5, .valid_2, .valid_3 {
+    width: 100%;
 }
 
 .valid_2, .valid_3 {
-    font-size: var( --fs-10m);
+    font-size: 1.2rem;
     font-weight: var(--fw-500);
     color: var(--clr-input-errors);
-    margin-top: 1vw;
+    margin-top: 0rem;
     visibility: hidden;
 }
 
 .su_1 {
-    font-family: var(--ff-primary);
-    font-size: var(--fs-18m);
+    font-size: 1.8rem;
     font-weight: var(--fw-500);
     background-color: var(--clr-vdark-violet);
     color: var(--clr-light-violet);
-    padding: 2.5vw;
-    border-radius: 0.75rem;
-    margin: 2rem 0 0.7vh 0;
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0 0.5rem 0;
     width: 100%;
 }
-
+/*
 .thanks {
     display: grid;
     grid-template-columns: 1fr;
@@ -314,11 +324,6 @@ p {
     border: 2px solid green;
     display: none;
 }
-
-/*
-.cont {
-    max-height: 31rem;
-}*/
 
 .icon_comp {
     padding: 5vw;
@@ -349,89 +354,107 @@ p {
     background-color: var(--clr-vdark-violet);
     color: var(--clr-light-violet);
     padding: 2.5vw;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     margin: 2rem 0 0.7vh 0;
     width: 100%;
 }
+*/
+
+/*
+.cont {
+    max-height: 31rem;
+}*/
 
 /*---------------------Desktop layout-------------------------*/
 @media screen and (min-width: 37.5rem) {
+
+    * {
+        display: none;
+    }
     
    /* * {
         border: 2px solid green;
     }*/
-
+/*
     .grid-container {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
             'imgo cont'
             'attribution attribution';
         gap: 0;
-        max-width: 100%;
+        min-width: 100%;
         position: relative;
-        top: 0;
-        /*border: 2px solid green;*/
+    
     }
 
     .imgo {
         background-image: url('images/bg-main-desktop.png');
+        position: relative;
         max-width: 35vw;
-        min-height: 55.8vw;
-        /*border: 2px solid green;*/
+        min-height: 43vw;
+        border-bottom: 1px solid var(--clr-white);
+    
     }
 
     .card_gray {
-        bottom: -38vw;
-        left: 19vw;
-        max-width: 90%;
+        position: absolute;
+        bottom: -29vw;
+        left: 23vw;
+        max-width: 70%;
         z-index: 1;
-        /*border: 3px solid blue;*/
+        
     }
 
     .cvc_num {
-        bottom: -22.3vw;
-        left: 43.5vw;
+        position: absolute;
+        bottom: -16.8vw;
+        left: 42.5vw;
         font-size: var(--fs-16d);
-        /*border: 1px solid yellow;*/
+        
     }
 
     .card_blue {
-        bottom: -5vw;
-        left: 10vw;
-        max-width: 90%;
-        /*border: 3px solid red;*/
+        position: absolute;
+        bottom: -3vw;
+        left: 14vw;
+        max-width: 70%;
+        
     }
 
     .svg_cont {
-        bottom: 17.5vw;
-        left: 14.5vw;
+        position: absolute;
+        bottom: 14.5vw;
+        left: 18.5vw;
         width: 5.5vw;
         height: auto;
-        /*border: 1px solid green;*/
+       
     }
 
     .card_num {
-        left: 17vw;
-        bottom: 18vw;
+        position: absolute;
+        left: 18.5vw;
+        bottom: 15vw;
         font-size: var(--fs-24d);
-        min-width: 23vw;
-        letter-spacing: 0.2vw;
-        /*border: 2px solid green;*/
+        min-width: 21vw;
+        letter-spacing: 0.1vw;
+       
     }
 
     .owner {
-        bottom: 23vw;
-        left: 15vw;
+        position: absolute;
+        bottom: 18.5vw;
+        left: 18.5vw;
         font-size: var(--fs-12d);
-        /*border: 2px solid green;*/
+        
     }
 
     .dat {
-        bottom: 31vw;
-        left: 39vw;
+        position: absolute;
+        bottom: 24.5vw;
+        left: 37.5vw;
         font-size: var(--fs-12d);
         max-width: 11vw;
-        /*border: 2px solid green;*/
+       
     }
     
     .dat1, .dat2 {
@@ -441,16 +464,16 @@ p {
 
     .cont {
         min-width: 65vw;
-        max-height: 55.8vw;
-        /*border: 2px solid yellow;*/
+        max-height: 43vw;
+        
     }
 
     .form {
-        max-width: 45%;
-        max-height: 30vw;
-        top: 14vw;
+        max-width: 30vw;
+        max-height: 26vw;
+        top: 9vw;
         left: 20vw;
-        /*border: 2px solid red;*/
+        
     }
 
     .form > * {
@@ -467,7 +490,7 @@ p {
 
     [class*='l-'] {
         font-size: var( --fs-18d);
-        padding: 0.5vw 0 0.5vw 0;
+        padding: 0.8vw 0 0.3vw 0;
      }
 
      [class*='i-'] {
@@ -482,9 +505,8 @@ p {
     }
 
      .fd {
-        margin: 1.2vw 0 1vw 0;
-        max-height: 12vw;
-        /*border: 2px solid pink;*/
+        margin: 0;
+       
     }
 
     .fd > * {
@@ -495,12 +517,16 @@ p {
         max-width: 12vw;
     }
 
+    .i-1, .i-2 {
+        max-width: 30vw;
+    }
+
     .i-3, .i-4 {
-        max-width: 4.5vw;
+        max-width: 8vw;
     }
 
     .l-5, .i-5 {
-        max-width: 11vw;
+        max-width: 13vw;
     }
 
     .valid_2, .valid_3 {
@@ -511,15 +537,15 @@ p {
 
     .su_1 {
         font-size: var(--fs-18d);
-        padding: 0.78vw;
-        margin: 2vw 0 0.8vw 0;
+        padding: 0.7vw;
+        margin: 1vw 0 0 0;
         width: 100%;
     }
 
     .attribution{
         grid-column: span 2;
     }
-
+*/
 }
 /*------------------grid area names---------------------------*/
 

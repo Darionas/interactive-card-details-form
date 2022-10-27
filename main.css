@@ -84,7 +84,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-        'blue_cont'
+        'cards'
         /*'card_gray'
         'cvc_num'
         'card_blue'
@@ -95,25 +95,39 @@ body {
     background-image: url('images/bg-main-mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
+    margin-left: 5rem;
     height: 25rem; /*46vw;*/
     /*height: 100%;*/
     /*position: relative;*/
     
 }
 
-.blue_cont {
+.cards {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-        'pos';
+        'pos_1'
+        'pos_2';
     height: 100%;
     width: 100%;
-    z-index: 3;
     position: relative;
-    border: 2px solid yellow;
+    /*border: 2px solid yellow;*/
 }
 
-.pos {
+.pos_1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+       'cvc_num';
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    width: 50%;
+    z-index: 2;
+
+}
+
+.pos_2 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -124,7 +138,6 @@ body {
        'dat';
     position: absolute;
     bottom: -2.5rem;
-    left: 6rem;
     width: 50%;
     z-index: 2;
 
@@ -153,8 +166,8 @@ body {
 */
 .card_blue {
     position: relative;
-    bottom: 0rem;
-    left: 0rem;
+    bottom: 0;
+    left: 0;
     width: 100%;
     z-index: 2;
 
@@ -175,35 +188,36 @@ body {
 
 .card_logo {
     position: absolute;
-    bottom: 19vw;
-    left: 3.5vw;
-    width: 17%;
+    top: 2vw; /*1.2rem;*/
+    left: 2.5vw; /*1rem;*/
+    width: 8vw;
     height: auto;
     z-index: 2;
 }
 
 .card_num {
     position: absolute;
-    left: 4vw;
+    left: 0;
     bottom: 8vw;
-    width: 90%;
-    font-size: 1.8rem;
+    width: 100%;
+    font-size: 3vw;
     font-weight: var(--fw-500);
     color: var(--clr-white);
+    text-align: center;
     letter-spacing: 0.5vw;
     z-index: 2;
 }
 
 .owner {
     position: absolute;
-    bottom: 3.5vw;
-    left: 4.267vw;
-    width: 36%;
-    font-size: 1.2rem;
+    bottom: 3vw;
+    left: 0;
+    padding-left: 2.5vw;
+    width: 100%;
+    font-size: 2vw;
     font-weight: var(--fw-500);
     color: var(--clr-white);
     z-index: 2;
-
 }
 
 .dat {
@@ -212,10 +226,12 @@ body {
     grid-template-areas:
         'dat1 dat2';
     position: absolute;
-    bottom: 3.5vw;
-    left: 40vw;
-    width: 15%;
-    font-size: 1.2rem;
+    bottom: 3vw;
+    left: 0vw;
+    width: 100%;
+    padding-right: 2.5vw;
+    text-align: right;
+    font-size: 2vw;
     font-weight: var(--fw-500);
     color: var( --clr-white);
     display: inline-block;
@@ -223,7 +239,7 @@ body {
 }
 
 .dat1, .dat2 {
-    font-size: 1.2rem;
+    font-size: 2vw;
     font-weight: var(--fw-500);
     color: var( --clr-white);
     max-width: 100%;
@@ -587,12 +603,16 @@ input {
     grid-area: imgo;
 }
 
-.blue_cont {
-    grid-area: blue_cont;
+.cards {
+    grid-area: cards;
 }
 
-.pos {
-    grid-area: pos;
+.pos_1 {
+    grid-area: pos_1;
+}
+
+.pos_2 {
+    grid-area: pos_2;
 }
 
 .card_gray {

@@ -40,7 +40,7 @@ html {
     /* 62.5% of 16px browser font size is 10px */
     font-size: 62.5%;
     height: 100%;
-}s
+}
 
 body {
     /* It returns default value of browser (16px) */
@@ -74,8 +74,6 @@ body {
         'attribution';
     gap: 0;
     min-width: 37.5rem;
-    /*position: relative;
-    top: 0;*/
     /*border: 2px solid yellow;*/
 }
 
@@ -84,63 +82,117 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-        'cards'
-        /*'card_gray'
-        'cvc_num'
-        'card_blue'
-        'svg_cont'
-        'card_num'
-        'owner'
-        'dat'*/;
+        'cards';
     background-image: url('images/bg-main-mobile.png');
     background-repeat: no-repeat;
     background-size: cover;
-    margin-left: 5rem;
-    height: 25rem; /*46vw;*/
-    /*height: 100%;*/
-    /*position: relative;*/
-    
+    margin-left: 0rem;
+    height: 25rem;
 }
 
 .cards {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-        'pos_1'
-        'pos_2';
+        'cont_blue'
+        'svg_cont'
+        'card_num'
+        'owner'
+        'dat';
     height: 100%;
     width: 100%;
     position: relative;
-    /*border: 2px solid yellow;*/
+    border: 2px solid yellow;
 }
 
-.pos_1 {
+.cont_blue {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-       'cvc_num';
+        'card_blue';
+    position: absolute;
+    bottom: -22rem;
+    left: 5rem;
+    max-width: 60%;
+    z-index: 2;
+    border: 2px solid yellow;
+}
+
+.card_blue {
+    width: 100%;
+    height: auto;
+}
+
+.svg_cont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'card_logo';
+    position: absolute;
+    bottom: -2rem;
+    left: 5rem;
+    padding-left: 1.2rem;
+    width: 60%;
+    z-index: 2;
+    border: 2px solid green;
+}
+
+.card_logo {
+    width: 14%;
+    height: auto;
+}
+
+.card_num {
+    position: absolute;
+    left: 5rem;
+    bottom: -5rem;
+    width: 60%;
+    font-size: 1.8rem;
+    font-weight: var(--fw-500);
+    color: var(--clr-white);
+    text-align: center;
+    letter-spacing: 0.1rem;
+    z-index: 2;
+    border: 2px solid yellow;
+}
+
+.owner {
+    position: absolute;
+    bottom: -5rem;
+    left: 5rem;
+    padding-left: 1.2rem;
+    width: 60%;
+    font-size: 1.2rem;
+    font-weight: var(--fw-500);
+    color: var(--clr-white);
+    z-index: 2;
+    border: 2px solid yellow;
+}
+
+.dat {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'dat1 dat2';
     position: absolute;
     bottom: 0rem;
-    left: 0rem;
-    width: 50%;
+    left: 5rem;
+    width: 60%;
+    padding-right: 1.2rem;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: var(--fw-500);
+    color: var( --clr-white);
+    display: inline-block;
     z-index: 2;
-
+    border: 2px solid yellow;
 }
 
-.pos_2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-       'card_blue'
-       /*'svg_cont'*/
-       'card_num'
-       'owner'
-       'dat';
-    position: absolute;
-    bottom: -2.5rem;
-    width: 50%;
-    z-index: 2;
-
+.dat1, .dat2 {
+    font-size: 1.2rem;
+    font-weight: var(--fw-500);
+    color: var( --clr-white);
+    max-width: 100%;
 }
 
 /*
@@ -164,14 +216,7 @@ body {
 
 }
 */
-.card_blue {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
 
-}
 /*
 .svg_cont {
     display: grid;
@@ -186,64 +231,7 @@ body {
     border: 2px solid green;
 }*/
 
-.card_logo {
-    position: absolute;
-    top: 2vw; /*1.2rem;*/
-    left: 2.5vw; /*1rem;*/
-    width: 8vw;
-    height: auto;
-    z-index: 2;
-}
 
-.card_num {
-    position: absolute;
-    left: 0;
-    bottom: 8vw;
-    width: 100%;
-    font-size: 3vw;
-    font-weight: var(--fw-500);
-    color: var(--clr-white);
-    text-align: center;
-    letter-spacing: 0.5vw;
-    z-index: 2;
-}
-
-.owner {
-    position: absolute;
-    bottom: 3vw;
-    left: 0;
-    padding-left: 2.5vw;
-    width: 100%;
-    font-size: 2vw;
-    font-weight: var(--fw-500);
-    color: var(--clr-white);
-    z-index: 2;
-}
-
-.dat {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        'dat1 dat2';
-    position: absolute;
-    bottom: 3vw;
-    left: 0vw;
-    width: 100%;
-    padding-right: 2.5vw;
-    text-align: right;
-    font-size: 2vw;
-    font-weight: var(--fw-500);
-    color: var( --clr-white);
-    display: inline-block;
-    z-index: 2;
-}
-
-.dat1, .dat2 {
-    font-size: 2vw;
-    font-weight: var(--fw-500);
-    color: var( --clr-white);
-    max-width: 100%;
-}
 
 /* style 2nd component - mobile */
 .cont {
@@ -607,14 +595,6 @@ input {
     grid-area: cards;
 }
 
-.pos_1 {
-    grid-area: pos_1;
-}
-
-.pos_2 {
-    grid-area: pos_2;
-}
-
 .card_gray {
     grid-area: card_gray;
 }
@@ -623,13 +603,17 @@ input {
     grid-area: cvc_num;
 }
 
+.cont_blue {
+    grid-area: cont_blue;
+}
+
 .card_blue {
     grid-area: card_blue;
 }
-/*
+
 .svg_cont {
     grid-area: svg_cont;
-}*/
+}
 
 .card_logo {
     grid-area: card_logo;

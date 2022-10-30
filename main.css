@@ -21,18 +21,6 @@
     --ff-primary: 'Space Grotesk', sans-serif;
     --fw-500: 500;
     --fw-700: 700;
-    /*--fs-10m: 2.667vw;
-    --fs-12m: 3.2vw;
-    --fs-16m: 4.267vw;
-    --fs-18m: 4.8vw;
-    --fs-22m: 5.867vw;
-    --fs-10d: 0.694vw;
-    --fs-12d: 0.833vw;
-    --fs-16d: 1.111vw;
-    --fs-18d: 1.25vw;
-    --fs-22d: 1.528vw; 
-    --fs-24d: 1.667vw;*/
-
 }
 
 /* typography */
@@ -65,6 +53,12 @@ body {
 /*
 * {border: 1px solid green;}*/
 
+body {
+    background-image: url('images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -82,45 +76,23 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-        'cards';
-    background-image: url('images/bg-main-mobile.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-left: 0rem;
-    height: 25rem;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        'cont_blue'
+        'card_blue'
         'svg_cont'
         'card_num'
         'owner'
         'dat';
-    height: 100%;
     width: 100%;
+    min-height: 35rem;
     position: relative;
-    border: 2px solid yellow;
-}
-
-.cont_blue {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        'card_blue';
-    position: absolute;
-    bottom: -22rem;
-    left: 5rem;
-    max-width: 60%;
-    z-index: 2;
-    border: 2px solid yellow;
+    /*border: 3px solid yellow;*/
 }
 
 .card_blue {
-    width: 100%;
-    height: auto;
+    position: absolute;
+    left: 5rem;
+    bottom: -32rem;
+    max-width: 60%;
+    z-index: 2;
 }
 
 .svg_cont {
@@ -129,39 +101,39 @@ body {
     grid-template-areas:
         'card_logo';
     position: absolute;
-    bottom: -2rem;
+    bottom: -8rem;
     left: 5rem;
     padding-left: 1.2rem;
-    width: 60%;
+    width: 12%;
     z-index: 2;
     border: 2px solid green;
 }
 
 .card_logo {
-    width: 14%;
-    height: auto;
+    max-width: 100%;
+    max-height: auto;
 }
 
 .card_num {
     position: absolute;
     left: 5rem;
-    bottom: -5rem;
-    width: 60%;
+    bottom: -10rem;
+    width: 58%;
     font-size: 1.8rem;
     font-weight: var(--fw-500);
     color: var(--clr-white);
     text-align: center;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.3rem;
     z-index: 2;
     border: 2px solid yellow;
 }
 
 .owner {
     position: absolute;
-    bottom: -5rem;
+    bottom: -8rem;
     left: 5rem;
     padding-left: 1.2rem;
-    width: 60%;
+    width: 58%;
     font-size: 1.2rem;
     font-weight: var(--fw-500);
     color: var(--clr-white);
@@ -175,9 +147,9 @@ body {
     grid-template-areas:
         'dat1 dat2';
     position: absolute;
-    bottom: 0rem;
+    bottom: -1rem;
     left: 5rem;
-    width: 60%;
+    width: 58%;
     padding-right: 1.2rem;
     text-align: right;
     font-size: 1.2rem;
@@ -195,43 +167,29 @@ body {
     max-width: 100%;
 }
 
-/*
+
 .card_gray {
     position: absolute;
-    bottom: -35.5vw;
-    left: 19vw;
-    max-width: 70%;
+    bottom: 9.8rem;
+    left: 15rem;
+    max-width: 60%;
     z-index: 1;
 
 }
 
 .cvc_num {
     position: absolute;
-    bottom: -9.5vw;
-    left: 73.5vw;
+    bottom: 21rem;
+    left: 15rem;
     color: var(--clr-white);
     font-size: var(--fs-12m);
     font-weight: var(--fw-500);
+    text-align: right;
+    width: 58%;
+    padding-right: 5rem;
     z-index: 2;
-
+    border: 2px solid yellow;
 }
-*/
-
-/*
-.svg_cont {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        'card_logo';
-    position: absolute;
-    bottom: -3rem;
-    left: 6rem;
-    width: 10%;
-    z-index: 2;
-    border: 2px solid green;
-}*/
-
-
 
 /* style 2nd component - mobile */
 .cont {
@@ -243,9 +201,7 @@ body {
     background-color: var(--clr-white);
     position: relative;
     height: 40rem;
-    /*width: 100%;*/
     z-index: 0;
-
 }
 
 
@@ -264,8 +220,7 @@ body {
     position: relative;
     justify-self: center;
     width: 70%;
-    visibility: visible;
-
+    /*visibility: visible;*/
 }
 
 .form > * {
@@ -345,6 +300,11 @@ input {
     margin: 1.5rem 0 0.5rem 0;
     width: 100%;
 }
+
+/* style 3rd component - mobile */
+
+/* 3rd component styled in external stylesheet */
+
 /*
 .thanks {
     display: grid;
@@ -404,7 +364,7 @@ input {
 }*/
 
 /*---------------------Desktop layout-------------------------*/
-@media screen and (min-width: 37.5rem) {
+@media screen and (min-width: 48rem) {
 
     * {
         display: none;
@@ -591,20 +551,12 @@ input {
     grid-area: imgo;
 }
 
-.cards {
-    grid-area: cards;
-}
-
 .card_gray {
     grid-area: card_gray;
 }
 
 .cvc_num {
     grid-area: cvc_num;
-}
-
-.cont_blue {
-    grid-area: cont_blue;
 }
 
 .card_blue {

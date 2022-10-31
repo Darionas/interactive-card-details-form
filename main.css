@@ -365,10 +365,6 @@ input {
 
 /*---------------------Desktop layout-------------------------*/
 @media screen and (min-width: 48rem) {
-
-    * {
-        display: none;
-    }
     
    /* * {
         border: 2px solid green;

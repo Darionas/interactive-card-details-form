@@ -384,11 +384,14 @@ input {
 
 /*---------------------Desktop layout-------------------------*/
 @media screen and (min-width: 48rem) {
+<<<<<<< HEAD
 
      * {
         display: none;
     }
 
+=======
+>>>>>>> a0c56fb16ed4b3322c8228cbca14f5af43213233
     
 
    /* * {

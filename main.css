@@ -77,12 +77,12 @@ body {
 .imgo {
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 27.5vw;
     grid-template-areas:
         'cont_blue'
         'cont_gray';        
     width: 100%;
-    min-height: 55vw;
+    height: 55vw;
+    margin-left: 0.5rem;
     position: relative;
     /*border: 3px solid yellow;*/
 }
@@ -97,8 +97,8 @@ body {
         'dat';
     position: relative;
     bottom: -31vw;
-    left: 12vw;
-    width: 50%;
+    left: 16vw;
+    width: 50vw;
     background-image: url("images/bg-card-front.png");
     background-size: cover;
     border-radius: 0.8vw;
@@ -181,8 +181,8 @@ body {
         'cvc_num';
     position: relative;
     bottom: 12vw;
-    left: 24vw;
-    width: 50%;
+    left: 28vw;
+    width: 50vw;
     height: 100%;
     background-image: url("images/bg-card-back.png");
     background-size: cover;
@@ -384,15 +384,10 @@ input {
 
 /*---------------------Desktop layout-------------------------*/
 @media screen and (min-width: 48rem) {
-<<<<<<< HEAD
 
      * {
         display: none;
-    }
-
-=======
->>>>>>> a0c56fb16ed4b3322c8228cbca14f5af43213233
-    
+    }    
 
    /* * {
         border: 2px solid green;

@@ -200,7 +200,6 @@ body {
         'form'
         'thanks';
     background-color: var(--clr-white);
-    position: relative;
     justify-items: center;
     padding-bottom: 4rem;
     z-index: 0;
@@ -230,6 +229,10 @@ body {
     color: var(--clr-vdark-violet);
     padding: 0.6rem 0 0.3rem 0;
     width: 100%;
+ }
+
+ .label_hidden {
+    display: none;
  }
  
  [class*='input_'] {
@@ -316,13 +319,11 @@ body {
         'icon_complete'
         'heading'
         'answer'
-        'btn_2';
+        'reset';
     background-color: var(--clr-white);
-    position: relative;
-    top: -35rem;
-    width: 100%;
-    padding-bottom: 2rem;
-    justify-items: center;
+    padding: 7rem 0 2rem 0;
+    width: 100vw;
+    justify-self: center;
     display: none;
 }
 
@@ -348,6 +349,14 @@ body {
     text-align: center;
 }
 
+.reset {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'btn_2';
+    justify-items: center;
+}
+
 .btn_2 {
     font-family: var(--ff-primary);
     font-size: 1.8rem;
@@ -356,9 +365,8 @@ body {
     color: var(--clr-light-violet);
     padding: 1.2rem;
     border-radius: 0.5rem;
-    position: relative;
     margin: 3rem 0 0.7rem 0;
-    width: 28rem;
+    width: 90%;
 }
 
 @media screen and (max-width: 18.75rem) {
@@ -367,12 +375,8 @@ body {
         padding-left: 4rem;
     }
 
-    .cont {
-        padding-left: 2rem;
-    }
-
     .thanks {
-        padding-left: 2rem;
+        padding-left: 4rem;
     }
 }
 
@@ -385,7 +389,7 @@ body {
 @media screen and (min-width: 48rem) {
 
     .grid-container {
-        grid-template-columns: 0.7fr 1.3fr;
+        grid-template-columns: 1fr 1.3fr;
         grid-template-areas:
             'imgo cont'
             'attribution attribution';
@@ -465,15 +469,13 @@ body {
     }
 
     .thanks {
-        inset: 0;
-        width: 55%;
-        margin: 0 20rem 0 30rem;
+        width: 50vw;
+        margin: 0 10rem 0 10rem;
         display: none;
     }
 
     .btn_2 {
-        width: 70%;
-        margin-left: 7rem;
+        width: 55%;
     }
 
     @media screen and (max-width: 56.25rem) {
@@ -614,6 +616,10 @@ body {
 
 .answer {
     grid-area: answer;
+}
+
+.reset{
+    grid-area: reset;
 }
 
 .btn_2 {

@@ -29,14 +29,15 @@
                 <label class="label_cardHolder" for="cardHolder">CARDHOLDER NAME</label><br/>
                 <input type="text" oninput="ownerOutput(event)" id="cardHolder" class="input_cardHolder" name="cardHolder" placeholder="e.g. Jane Appleseed" /><br/>
                 <label class="label_cardNr" for="cardNr">CARD NUMBER</label><br/>
-                <input type="text" oninput="card_numOutput(event)" id="cardNr" class="input_cardNr" name="cardNr" maxlength="16" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" placeholder="e.g. 1234 5678 9123 0000" /><br/>
+                <input type="text" oninput="card_numOutput(event)" id="cardNr" class="input_cardNr" name="cardNr" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" /><br/>
                 <p class="valid_1">Wrong format, numbers only</p>
                 <fieldset class="fieldset_group">
                     <label class="label_expDate" for="mm">EXP. DATE (MM/YY)</label>
-                    <input type="number" id="mm" class="input_month" name="mm" min="1" max="12" placeholder="MM" />
-                    <input type="number" id="yy" class="input_year" name="yy" min="22" placeholder="YY" />
+                    <input type="number" oninput="monthOutput(event)" id="mm" class="input_month" name="mm" min="1" max="12" maxlength="2" placeholder="MM" />
+                    <label class="label_hidden" for="yy">Hidden label</label>
+                    <input type="number" oninput="yearOutput(event)" id="yy" class="input_year" name="yy" min="22" placeholder="YY" />
                     <label class="label_cvcNr" for="cvc">CVC</label>
-                    <input type="number" id="cvc" class="input_cvcNr" name="cvc" placeholder="e.g. 123" />
+                    <input type="text" oninput="cvcOutput(event)" id="cvc" class="input_cvcNr" name="cvc" maxlength="3" placeholder="e.g. 123" />
                     <p class="valid_2">Can't be blank</p>
                     <p class="valid_3">Can't be blank</p>
                 </fieldset>
@@ -46,7 +47,7 @@
                 <img class="icon_complete" src="images/icon-complete.svg" alt="Icon complete" />
                 <h1 class="heading">THANK YOU!</h1>
                 <p class="answer">We've added your card details</p>
-                <input type="button" class="btn_2" value="Continue" />
+                <div class="reset"><input type="button" class="btn_2" value="Continue" /></div>
             </div>
         </main>
         <div class="attribution">

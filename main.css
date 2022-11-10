@@ -389,7 +389,7 @@ body {
 @media screen and (min-width: 48rem) {
 
     .grid-container {
-        grid-template-columns: 1fr 1.3fr;
+        grid-template-columns: 1fr 1.8fr;
         grid-template-areas:
             'imgo cont'
             'attribution attribution';

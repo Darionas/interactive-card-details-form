@@ -2,49 +2,38 @@
 
 const btn_1 = document.getElementsByClassName('btn_1')[0];
 const btn_2 = document.getElementsByClassName('btn_2')[0];
-const cardNr_border = document.querySelector("input[id='cardNr']");
-const month_border = document.querySelector("input[id='mm']");
-const year_border = document.querySelector("input[id='yy']");
-
-/* inputs on form */
-const cardHolder_input = document.getElementById('cardHolder').value;
-const cardNr_input = document.getElementById('cardNr').value;
-const month_input = document.getElementById('mm').value;
-const year_input = document.getElementById('yy').value;
-const cvcNr_input = document.getElementById('cvc').value;
 
 /* Outputs on form */
 const valid_1 = document.getElementsByClassName('valid_1')[0];
 const valid_2 = document.getElementsByClassName('valid_2')[0];
 const valid_3 = document.getElementsByClassName('valid_3')[0];
 
-/* Outputs on card */
-const owner = document.getElementsByClassName('owner')[0];
-const card_num = document.getElementsByClassName('card_num')[0];
-const month = document.getElementsByClassName('month')[0];
-const month_val = document.getElementsByClassName('month')[0].value;
-const year = document.getElementsByClassName('year')[0];
-const cvc_num = document.getElementsByClassName('cvc_num')[0];
-
-
 /* Outputs on cards */
+const owner_out = document.getElementsByClassName('owner')[0];
+const card_num_out = document.getElementsByClassName('card_num')[0];
+const month_out = document.getElementsByClassName('month')[0];
+const year_out = document.getElementsByClassName('year')[0];
+const cvc_num_out = document.getElementsByClassName('cvc_num')[0];
+
+
+/* Outputs on cards (functions) */
 function ownerOutput(event) {
     const value = event.target.value;
-    owner.innerText = value.toUpperCase();
+    owner_out.innerText = value.toUpperCase();
 }
 
 function card_numOutput(event) {
     const value = event.target.value;
-    card_num.innerText = value;
+    card_num_out.innerText = value;
 }
 
 function monthOutput(event) {
     const value = event.target.value;
     if(value > 9) {
-       month.innerText = value;
+       month_out.innerText = value;
 
     } else if(value < 9) {
-        month.innerText = ('0' + value).slice(-2);
+        month_out.innerText = ('0' + value).slice(-2);
 
     } else {
         return;
@@ -53,12 +42,12 @@ function monthOutput(event) {
 
 function yearOutput(event) {
     const value = event.target.value;
-    year.innerText = value;
+    year_out.innerText = value;
 }
 
 function cvcOutput(event) {
     const value = event.target.value;
-    cvc_num.innerText = value;
+    cvc_num_out.innerText = value;
 }
 
 /* Card number format */
@@ -94,42 +83,55 @@ cardNr_format.addEventListener("keyup", function() {
     event.target.value = newValue;
 }
 
+
+
 /* Data confirmation */
 btn_1.addEventListener('click', confirm);
 
 function confirm() {
-    const form = document.getElementsByClassName('form')[0];
-    const thanks = document.getElementsByClassName('thanks')[0];
-    form.style.display = 'none';
-    thanks.style.display = 'block';
-
     /* Card validation */
-    const checkInp = document.getElementById('cardNr').value;
-    const str = checkInp.slice(0, 4) + checkInp.slice(5, 9) + checkInp.slice(10, 14) + checkInp.slice(15, 19);
-    const num_val = [...str].every(c => '0123456789'.includes(c));
+        const check_cardNrInp = document.getElementById('cardNr').value;
+        const cardNr_border = document.getElementById('cardNr');
+        const str = check_cardNrInp.slice(0, 4) + check_cardNrInp.slice(5, 9) + check_cardNrInp.slice(10, 14) + check_cardNrInp.slice(15, 19);
+        const num_val = [...str].every(c => '0123456789'.includes(c));
     if(num_val == false) {
         valid_1.style.visibility = 'visible';
         cardNr_border.style.borderColor = 'hsl(0, 100%, 66%)';
     }
 
-    /* Exp. Data validation */
-
-    if(month_input.length == 0) {
+    /* Exp. Data input validation */
+       const check_monthInp = document.getElementById('mm').value;
+       const month_border = document.getElementById('mm');
+    if(check_monthInp.length == 0) {
         valid_2.style.visibility = 'visible';
         month_border.style.borderColor = 'hsl(0, 100%, 66%)';
     }
-    
-    if(year_input.length == 0) {
+
+       const check_yearInp = document.getElementById('yy').value;
+       const year_border = document.getElementById('yy');
+    if(check_yearInp.length == 0) {
         valid_2.style.visibility = 'visible';
         year_border.style.borderColor = 'hsl(0, 100%, 66%)';
-
     }
 
-
-    /* cvc number validation */
-    if(cvcNr_input.length == 0) {
+    /* cvc number input validation */
+    const check_cvcNrInp = document.getElementById('cvc').value;
+    const cvcNr_border = document.getElementById('cvc');
+    if(check_cvcNrInp.length == 0) {
         valid_3.style.visibility = 'visible';
+        cvcNr_border.style.borderColor = 'hsl(0, 100%, 66%)';
     }
+ 
+
+  if((num_val == false) || (check_monthInp.length == 0) || (check_yearInp.length == 0) || (check_cvcNrInp.length == 0)) {
+      return;
+  } else {
+      const form = document.getElementsByClassName('form')[0];
+      const thanks = document.getElementsByClassName('thanks')[0];
+      form.style.display = 'none';
+      thanks.style.display = 'block';
+  }
+
 }
 
 /* Data reset */

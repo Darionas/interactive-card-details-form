@@ -1,5 +1,6 @@
-'use strict'
+'use stric'
 
+/*---------------DOM elements-------------------------*/
 const btn_1 = document.getElementsByClassName('btn_1')[0];
 const btn_2 = document.getElementsByClassName('btn_2')[0];
 
@@ -15,6 +16,7 @@ const month_out = document.getElementsByClassName('month')[0];
 const year_out = document.getElementsByClassName('year')[0];
 const cvc_num_out = document.getElementsByClassName('cvc_num')[0];
 
+const form_val = document.querySelector('.form');
 
 /* Outputs on cards (functions) */
 function ownerOutput(event) {
@@ -83,56 +85,92 @@ cardNr_format.addEventListener("keyup", function() {
     event.target.value = newValue;
 }
 
-
-
-/* Data confirmation */
-btn_1.addEventListener('click', confirm);
-
-function confirm() {
-    /* Card validation */
+   /* Card number input validation */
+   function checkCardNr() {
         const check_cardNrInp = document.getElementById('cardNr').value;
         const cardNr_border = document.getElementById('cardNr');
         const str = check_cardNrInp.slice(0, 4) + check_cardNrInp.slice(5, 9) + check_cardNrInp.slice(10, 14) + check_cardNrInp.slice(15, 19);
         const num_val = [...str].every(c => '0123456789'.includes(c));
     if(num_val == false) {
+        /* Error message*/
         valid_1.style.visibility = 'visible';
         cardNr_border.style.borderColor = 'hsl(0, 100%, 66%)';
+    } else {
+       /* Succeded */
+        valid_1.style.visibility = 'hidden';
+        cardNr_border.style.borderColor = 'hsl(270, 3%, 87%)';
+        return true;
     }
+};
 
-    /* Exp. Data input validation */
-       const check_monthInp = document.getElementById('mm').value;
-       const month_border = document.getElementById('mm');
+    /* Month input validation */
+    function checkMonth() {
+        const check_monthInp = document.getElementById('mm').value;
+        const month_border = document.getElementById('mm');
     if(check_monthInp.length == 0) {
+        /* Error message */
         valid_2.style.visibility = 'visible';
         month_border.style.borderColor = 'hsl(0, 100%, 66%)';
+    } else {
+        /* Succeded */ 
+        valid_2.style.visibility = 'hidden';
+        month_border.style.borderColor = 'hsl(270, 3%, 87%)';
+        return true;
     }
+}
 
+       /* Year input validation */
+    function checkYear() {
        const check_yearInp = document.getElementById('yy').value;
        const year_border = document.getElementById('yy');
     if(check_yearInp.length == 0) {
+        /* Error message */
         valid_2.style.visibility = 'visible';
         year_border.style.borderColor = 'hsl(0, 100%, 66%)';
+    } else {
+        /* Succeded */
+        valid_2.style.visibility = 'hidden';
+        year_border.style.borderColor = 'hsl(270, 3%, 87%)';
+        return true;
     }
+    
+}
 
-    /* cvc number input validation */
-    const check_cvcNrInp = document.getElementById('cvc').value;
-    const cvcNr_border = document.getElementById('cvc');
+/* cvc number input validation */
+    function checkCvcNr() {
+        const check_cvcNrInp = document.getElementById('cvc').value;
+        const cvcNr_border = document.getElementById('cvc');
     if(check_cvcNrInp.length == 0) {
+        /* Error message */
         valid_3.style.visibility = 'visible';
         cvcNr_border.style.borderColor = 'hsl(0, 100%, 66%)';
+    } else {
+        /* Succeded */
+        valid_3.style.visibility = 'hidden';
+        cvcNr_border.style.borderColor = 'hsl(270, 3%, 87%)';
+        return true;
     }
- 
+}   
 
-  if((num_val == false) || (check_monthInp.length == 0) || (check_yearInp.length == 0) || (check_cvcNrInp.length == 0)) {
-      return;
-  } else {
-      const form = document.getElementsByClassName('form')[0];
-      const thanks = document.getElementsByClassName('thanks')[0];
-      form.style.display = 'none';
-      thanks.style.display = 'block';
-  }
+/* Data confirmation */
+form_val.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    checkCardNr();
+    checkMonth();
+    checkYear();
+    checkCvcNr();
 
-}
+    if(checkCardNr() && checkMonth() && checkYear() && checkCvcNr()) {
+        const form = document.getElementsByClassName('form')[0];
+        const thanks = document.getElementsByClassName('thanks')[0];
+        form.style.display = 'none';
+        thanks.style.display = 'block';
+    } else {
+        return;
+    }
+})
+
 
 /* Data reset */
 btn_2.addEventListener('click', reset);

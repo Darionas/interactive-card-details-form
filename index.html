@@ -27,9 +27,9 @@
         <main class="cont">
             <form class="form">
                 <label class="label_cardHolder" for="cardHolder">CARDHOLDER NAME</label><br/>
-                <input type="text" oninput="ownerOutput(event)" id="cardHolder" class="input_cardHolder" name="cardHolder" placeholder="e.g. Jane Appleseed" /><br/>
+                <input type="text" oninput="ownerOutput(event)" id="cardHolder" class="input_cardHolder" name="cardHolder" placeholder="e.g. Jane Appleseed" required /><br/>
                 <label class="label_cardNr" for="cardNr">CARD NUMBER</label><br/>
-                <input type="text" oninput="card_numOutput(event)" id="cardNr" class="input_cardNr" name="cardNr" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" /><br/>
+                <input type="text" oninput="card_numOutput(event)" id="cardNr" class="input_cardNr" name="cardNr" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" required /><br/>
                 <p class="valid_1">Wrong format, numbers only</p>
                 <fieldset class="fieldset_group">
                     <label class="label_expDate" for="mm">EXP. DATE (MM/YY)</label>

@@ -91,7 +91,7 @@ cardNr_format.addEventListener("keyup", function() {
         const cardNr_border = document.getElementById('cardNr');
         const str = check_cardNrInp.slice(0, 4) + check_cardNrInp.slice(5, 9) + check_cardNrInp.slice(10, 14) + check_cardNrInp.slice(15, 19);
         const num_val = [...str].every(c => '0123456789'.includes(c));
-    if(num_val == false) {
+    if(num_val == false || str.length != 16) {
         /* Error message*/
         valid_1.style.visibility = 'visible';
         cardNr_border.style.borderColor = 'hsl(0, 100%, 66%)';

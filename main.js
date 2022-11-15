@@ -74,16 +74,14 @@ cardNr_format.addEventListener("keyup", function() {
    
 
   /* Add leading zero to month */
-  document.querySelector("input[id=mm]").addEventListener('input', addLeadingZero);
-  function addLeadingZero(event) {
-    // get maxlength attr
-    const maxLength = parseInt(event.target.getAttribute("maxlength"))
-    // "0".repeat(maxLength) <-- create default pad with maxlength given
-    // append zero and slice last of attr maxlength value
-    const newValue = ("0".repeat(maxLength) + event.target.value.toString()).slice(-maxLength);
-    // change the value of input
-    event.target.value = newValue;
-}
+const input_month = document.getElementById('mm');
+function addLeadingZero(value) {
+    return value.length < 2 ? "0" + value : value;
+  }
+
+input_month.addEventListener('input', function() {
+    input_month.value = addLeadingZero(input_month.value);
+});
 
    /* Card number input validation */
    function checkCardNr() {

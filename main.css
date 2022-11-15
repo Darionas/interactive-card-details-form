@@ -468,13 +468,13 @@ body {
         padding: 3rem;
     }
 
-    input:hover {
+    input[type=text]:hover, input[type=number]:hover {
         cursor: pointer;
-        border-color: var(--clr-secondary-bgr);
+        border-color: var(--clr-primary-bgr);
     }
 
     input:active {
-        border-color: var(--clr-primary-bgr);
+        border-color: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     }
 
     .thanks {
